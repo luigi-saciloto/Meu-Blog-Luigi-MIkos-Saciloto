@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBlog | Luigi Mikos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+  <!-- Cabeçalho Principal -->
+  <header class="cabecalho">
+    <div class="container">
+      <h1 class="logo" id="logo-home">Dev<span>Blog</span></h1>
+      
+      <!-- Campo de Busca -->
+      <div class="busca-box">
+        <input type="text" id="input-busca" placeholder="Buscar artigos...">
+      </div>
+
+      <!-- Navegação Superior -->
+      <nav class="menu">
+        <ul>
+          <li><a href="#" id="btn-home">Home</a></li>
+          <li><button id="btn-tema" class="btn-tema" title="Alternar Tema">☀️</button></li>
+          <li id="item-login"><a href="#" id="btn-login-modal">Login ADM</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Painel ADM (Visível apenas após Login) -->
+  <div id="area-adm" class="container escondido">
+    <div class="bar-adm-info">
+      <span>🔑 Modo Administrador Ativo</span>
+      <div class="bar-adm-acoes">
+        <button id="btn-abrir-postador" class="btn-adm">+ Novo Post</button>
+        <button id="btn-logout" class="btn-logout">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <main class="conteudo-principal container">
+    
+    <!-- Seção de Posts -->
+    <section class="posts" id="container-posts">
+      <!-- Artigos inseridos via JavaScript -->
+    </section>
+
+    <!-- Barra Lateral -->
+    <aside class="barra-lateral">
+      
+      <!-- Card do Autor -->
+      <div class="card-sidebar">
+        <h3>Sobre o Autor</h3>
+        <img src="https://picsum.photos/id/1005/150/150" alt="Foto do autor" class="avatar">
+        <h4 class="nome-autor">Luigi Mikos Saciloto</h4>
+        <p class="autor-bio">
+          15 anos, estudante do <strong>CEEP Curitiba</strong> e morador de São José dos Pinhais - PR. Apaixonado por tecnologia, programação e desenvolvimento web.
+        </p>
+      </div>
+
+      <!-- Categorias Dinâmicas -->
+      <div class="card-sidebar">
+        <h3>Categorias</h3>
+        <ul class="lista-categorias" id="lista-categorias">
+          <!-- Categorias inseridas via JavaScript -->
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- 🔐 MODAL DE LOGIN ADM -->
+  <div id="modal-login" class="modal escondido">
+    <div class="modal-conteudo">
+      <h2>Acesso Administrador</h2>
+      <p class="dica-login">Credencial de acesso: digite <strong>adm</strong></p>
+      <form id="form-login">
+        <input type="text" id="login-senha" placeholder="Digite a chave de acesso (adm)" required class="input-adm">
+        <button type="submit" class="btn-enviar">Entrar</button>
+        <button type="button" id="btn-fechar-login" class="btn-cancelar">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ✍️ MODAL DE CRIAR POST -->
+  <div id="modal-post" class="modal escondido">
+    <div class="modal-conteudo">
+      <h2>Publicar Novo Artigo</h2>
+      <form id="form-novo-post">
+        <input type="text" id="post-titulo" placeholder="Título do Artigo" required class="input-adm">
+        <select id="post-categoria" class="input-adm" required>
+          <option value="" disabled selected>Selecione uma categoria</option>
+          <option value="HTML & CSS">HTML & CSS</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Backend & Git">Backend & Git</option>
+          <option value="Dicas de Estudo">Dicas de Estudo</option>
+        </select>
+        
+        <label class="label-file">
+          <span>Imagem do Artigo (Opcional):</span>
+          <input type="file" id="post-imagem" accept="image/*" class="input-adm">
+        </label>
+        
+        <textarea id="post-resumo" placeholder="Conteúdo ou resumo do artigo..." rows="4" required class="input-adm"></textarea>
+        
+        <button type="submit" class="btn-enviar">Publicar Artigo</button>
+        <button type="button" id="btn-fechar-post" class="btn-cancelar">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <p>&copy; 2026 DevBlog — Desenvolvido por Luigi Mikos Saciloto (CEEP Curitiba).</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
